@@ -6,12 +6,11 @@
 #define PORTB (*(volatile uint8_t *)0x25)
 #define DDRD  (*(volatile uint8_t *)0x2A)
 #define PORTD (*(volatile uint8_t *)0x2B)
-#define PIND  (*(volatile uint8_t *)0x29)
 #define PINB  (*(volatile uint8_t *)0x23)
 
 int main(void){
 	DDRD  |= (1 << 7);  // PD7 output LED 
-	DDRB  |= (1 << 0);  // PB0 output triger -> 0
+	DDRB  |= (1 << 0);  // PB0 output trigger -> 0
 	DDRB  &= ~(1 << 1); // PB1 input (Echo)
 
 	while (1) {	
